@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-slate-900 text-white relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl animate-float"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl animate-float"></div>
         <div className="absolute bottom-10 right-10 w-48 h-48 bg-blue-500/5 rounded-full blur-2xl animate-float-delayed"></div>
       </div>
       
@@ -31,7 +31,7 @@ const Footer = () => {
                 <a 
                   key={index}
                   href="#" 
-                  className="bg-teal-600 p-2 rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-110 hover:-rotate-12 animate-fade-in-up"
+                  className="bg-blue-600 p-2 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 hover:-rotate-12 animate-fade-in-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <Icon size={20} />
@@ -45,27 +45,27 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `300ms` }}>
+                <a href="#home" className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `300ms` }}>
                   Home
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `350ms` }}>
+                <a href="#services" className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `350ms` }}>
                   Services
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `400ms` }}>
+                <a href="#about" className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `400ms` }}>
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `450ms` }}>
+                <a href="#solutions" className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `450ms` }}>
                   Solutions
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `500ms` }}>
+                <a href="#contact" className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `500ms` }}>
                   Contact
                 </a>
               </li>
@@ -78,18 +78,18 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3 group hover:translate-x-1 transition-transform duration-300">
-                <Phone size={18} className="text-teal-400 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                <Phone size={18} className="text-blue-400 mt-1 group-hover:scale-110 transition-transform duration-300" />
                 <div>
                   <p className="text-gray-300">+91 9133431786</p>
                   <p className="text-sm text-gray-400">24/7 Emergency</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 group hover:translate-x-1 transition-transform duration-300">
-                <Mail size={18} className="text-teal-400 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                <Mail size={18} className="text-blue-400 mt-1 group-hover:scale-110 transition-transform duration-300" />
                 <p className="text-gray-300">coldfrosthyd@gmail.com</p>
               </div>
               <div className="flex items-start space-x-3 group hover:translate-x-1 transition-transform duration-300">
-                <MapPin size={18} className="text-teal-400 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                <MapPin size={18} className="text-blue-400 mt-1 group-hover:scale-110 transition-transform duration-300" />
                 <div>
                   <p className="text-gray-300">123 Industrial Area, Sector 15</p>
                   <p className="text-gray-300">Hyderbad, Telanagana 122001</p>
@@ -105,11 +105,11 @@ const Footer = () => {
               © 2024 Cold Frost India. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((link, index) => (
+              {['Privacy Policy', 'Terms of Service' ].map((link, index) => (
                 <a 
                   key={link}
                   href="#" 
-                  className="text-gray-400 hover:text-teal-400 text-sm transition-all duration-300 hover:translate-y-1 animate-fade-in-up"
+                  className="text-gray-400 hover:text-blue-400 text-sm transition-all duration-300 hover:translate-y-1 animate-fade-in-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {link}

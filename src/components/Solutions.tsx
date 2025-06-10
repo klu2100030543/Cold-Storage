@@ -1,381 +1,334 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Building2, Truck, Factory, Store, Wheat, Pill, IceCream, Fish, Wine, Snowflake, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Warehouse, Snowflake, DoorOpen, Droplets, Wind, Thermometer, IceCream, Package, SlidersHorizontal } from 'lucide-react';
 
-interface Industry {
-  icon: JSX.Element;
-  title: string;
-  description: string;
-  image: string;
-  features: string[];
-  detailedInfo: {
-    overview: string;
-    benefits: string[];
-    specifications: string[];
-    applications: string[];
-  };
+interface EquipmentDetails {
+  brief: string;
+  benefits: string[];
+  specs: string[];
+  applications: string[];
 }
 
-const Solutions = () => {
-  const [visibleCards, setVisibleCards] = useState<number[]>([]);
-  const [selectedIndustry, setSelectedIndustry] = useState<Industry | null>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
+interface EquipmentItem {
+  title: string;
+  image: string;
+  description: string;
+  features: string[];
+  details: EquipmentDetails;
+}
 
-  const industries: Industry[] = [
-    {
-      icon: <Wheat className="w-12 h-12" />,
-      title: "Agriculture & Food Processing",
-      description: "Cold storage solutions for fruits, vegetables, dairy, and processed foods across India.",
-      image: "https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Post-harvest storage", "Processing facilities", "Export quality maintenance", "Temperature monitoring"],
-      detailedInfo: {
-        overview: "Our comprehensive cold storage solutions for agriculture and food processing are designed to maintain optimal conditions for various agricultural products. We ensure the highest quality preservation while meeting international export standards.",
-        benefits: [
-          "Extended shelf life of produce",
-          "Reduced post-harvest losses",
-          "Maintained nutritional value",
-          "Compliance with international standards"
-        ],
-        specifications: [
-          "Temperature range: -2°C to 15°C",
-          "Humidity control: 85-95%",
-          "Automated monitoring systems",
-          "Energy-efficient design"
-        ],
-        applications: [
-          "Fruits and vegetables storage",
-          "Dairy products preservation",
-          "Processed food storage",
-          "Export-oriented facilities"
-        ]
-      }
+const equipment: EquipmentItem[] = [
+  {
+    title: 'Cold Room',
+    image: '/coldroom.webp',
+    description: 'Modular cold rooms for storage of perishable goods with precise temperature and humidity control.',
+    features: [
+      'Customizable sizes',
+      'Temperature range: -40°C to +10°C',
+      'PUF insulated panels',
+      'Energy efficient',
+    ],
+    details: {
+      brief: 'Cold rooms are insulated modular storage units designed to maintain low temperatures for preserving perishable items like food, medicine, and chemicals with precise humidity and temperature control.',
+      benefits: [
+        'Customizable sizing for various capacities',
+        'High energy efficiency with low running costs',
+        'PUF insulated panels for superior insulation',
+        'Reliable temperature consistency from -40°C to +10°C',
+      ],
+      specs: [
+        'Temperature Range: -40°C to +10°C',
+        'Insulation: Polyurethane Foam (PUF)',
+        'Panel Thickness: 60mm–150mm',
+        'Types: Modular walk-in or custom-built',
+      ],
+      applications: [
+        'Food processing & storage industries',
+        'Pharmaceutical warehouses',
+        'Floral storage',
+        'Research labs',
+      ],
     },
-    {
-      icon: <Store className="w-12 h-12" />,
-      title: "Retail & Supermarkets",
-      description: "Walk-in coolers, display freezers, and cold rooms for retail chains and supermarkets.",
-      image: "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Display solutions", "Walk-in coolers", "Energy monitoring", "Inventory management"],
-      detailedInfo: {
-        overview: "Our retail cold storage solutions are designed to enhance customer experience while maintaining product quality. We provide integrated systems that combine efficient cooling with modern retail requirements.",
-        benefits: [
-          "Enhanced product visibility",
-          "Improved customer experience",
-          "Reduced energy consumption",
-          "Better inventory management"
-        ],
-        specifications: [
-          "Customizable display units",
-          "Smart temperature control",
-          "LED lighting integration",
-          "Easy maintenance access"
-        ],
-        applications: [
-          "Supermarket cold rooms",
-          "Display freezers",
-          "Walk-in coolers",
-          "Back storage facilities"
-        ]
-      }
+  },
+  {
+    title: 'Glass Door Chiller',
+    image: '/glassdoor.webp',
+    description: 'Display chillers with glass doors for beverages, dairy, and retail products.',
+    features: [
+      'Double/triple glass doors',
+      'LED lighting',
+      'Temperature range: 0°C to +8°C',
+      'Attractive display',
+    ],
+    details: {
+      brief: 'Glass door chillers are refrigeration units with transparent doors used for showcasing chilled products in commercial environments, maintaining visual appeal and freshness.',
+      benefits: [
+        'Enhanced product visibility for customers',
+        'Energy-saving LED lighting',
+        'Reduced cooling loss with triple glass doors',
+        'Elegant and modern retail appearance',
+      ],
+      specs: [
+        'Temperature Range: 0°C to +8°C',
+        'Lighting: Internal LED',
+        'Glass: Double/Triple-glazed insulated',
+        'Door Types: Swing or sliding',
+      ],
+      applications: [
+        'Supermarkets & retail stores',
+        'Beverage & dairy product display',
+        'Convenience stores',
+        'Cafeterias',
+      ],
     },
-    {
-      icon: <Pill className="w-12 h-12" />,
-      title: "Pharmaceuticals",
-      description: "Temperature-controlled storage for medicines, vaccines, and pharmaceutical products.",
-      image: "https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Vaccine storage", "Medicine preservation", "Compliance monitoring", "24/7 temperature control"],
-      detailedInfo: {
-        overview: "Our pharmaceutical cold storage solutions meet the strictest regulatory requirements while ensuring the integrity of temperature-sensitive medications and vaccines. We provide comprehensive monitoring and backup systems.",
-        benefits: [
-          "Regulatory compliance",
-          "Real-time monitoring",
-          "Backup power systems",
-          "Data logging and reporting"
-        ],
-        specifications: [
-          "Temperature range: 2°C to 8°C",
-          "Alarm systems",
-          "Remote monitoring",
-          "Documentation systems"
-        ],
-        applications: [
-          "Vaccine storage",
-          "Medicine warehouses",
-          "Clinical trial storage",
-          "Distribution centers"
-        ]
-      }
+  },
+  {
+    title: 'Cold Room Doors',
+    image: '/coldroomdoor.jpg',
+    description: 'Durable and insulated doors for cold rooms, available in sliding and hinged types.',
+    features: [
+      'PUF insulated',
+      'Heated frames (optional)',
+      'Custom sizes',
+      'Easy operation',
+    ],
+    details: {
+      brief: 'Cold room doors are specially engineered, insulated doors available in sliding or hinged styles, designed to maintain thermal efficiency and prevent air leakage.',
+      benefits: [
+        'Enhanced insulation with PUF-filled doors',
+        'Optional heating to prevent freezing',
+        'Custom sizing for any cold room',
+        'Smooth and easy operation',
+      ],
+      specs: [
+        'Door Types: Sliding / Hinged',
+        'Insulation: PUF Core',
+        'Heating Option: Yes (frame heaters)',
+        'Finishing: Galvanized / Stainless Steel',
+      ],
+      applications: [
+        'Industrial cold storage',
+        'Food and pharma manufacturing units',
+        'Warehousing & logistics centers',
+        'Retail cold chambers',
+      ],
     },
-    {
-      icon: <IceCream className="w-12 h-12" />,
-      title: "Dairy & Ice Cream",
-      description: "Specialized cold storage solutions for dairy products and ice cream manufacturing.",
-      image: "https://images.pexels.com/photos/1352281/pexels-photo-1352281.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Bulk storage", "Production facilities", "Distribution centers", "Quality control"],
-      detailedInfo: {
-        overview: "Our dairy and ice cream storage solutions are designed to maintain optimal conditions for both production and storage, ensuring product quality and consistency throughout the supply chain.",
-        benefits: [
-          "Consistent product quality",
-          "Efficient production flow",
-          "Reduced energy costs",
-          "Improved shelf life"
-        ],
-        specifications: [
-          "Temperature range: -25°C to 4°C",
-          "Hygienic design",
-          "Easy cleaning systems",
-          "Production integration"
-        ],
-        applications: [
-          "Ice cream production",
-          "Dairy product storage",
-          "Processing facilities",
-          "Distribution centers"
-        ]
-      }
+  },
+  {
+    title: 'Condensing Units (Air & Water Cooled)',
+    image: '/watercooled.avif',
+    description: 'Efficient air-cooled and water-cooled condensing units for various refrigeration needs.',
+    features: [
+      'High efficiency fans',
+      'Low noise operation',
+      'Weatherproof/Corrosion resistant',
+      'Easy installation & maintenance',
+      'Available in air-cooled and water-cooled options',
+    ],
+    details: {
+      brief: 'Condensing units serve as the heart of the refrigeration system, responsible for compressing refrigerant and maintaining the cold room temperature. They come in air-cooled and water-cooled variants.',
+      benefits: [
+        'High-efficiency operation with low energy consumption',
+        'Weatherproof and corrosion-resistant',
+        'Quiet and low-vibration systems',
+        'Compatible with multiple refrigerants',
+      ],
+      specs: [
+        'Types: Air-cooled / Water-cooled',
+        'Cooling Capacity: Customized as per requirement',
+        'Compressor Types: Scroll, Reciprocating, Screw',
+        'Coating: Anti-corrosive',
+      ],
+      applications: [
+        'Cold rooms and chillers',
+        'Food and beverage industries',
+        'Dairy and fisheries',
+        'Pharmaceuticals',
+      ],
     },
-    {
-      icon: <Fish className="w-12 h-12" />,
-      title: "Seafood & Meat",
-      description: "Temperature-controlled storage for seafood and meat processing industries.",
-      image: "https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Processing units", "Storage facilities", "Export compliance", "Hygiene standards"],
-      detailedInfo: {
-        overview: "Our seafood and meat storage solutions are designed to maintain the highest standards of food safety while ensuring optimal product quality. We provide integrated systems for processing, storage, and distribution.",
-        benefits: [
-          "Enhanced food safety",
-          "Extended shelf life",
-          "Export compliance",
-          "Efficient processing"
-        ],
-        specifications: [
-          "Temperature range: -40°C to 4°C",
-          "HACCP compliance",
-          "Sanitary design",
-          "Processing integration"
-        ],
-        applications: [
-          "Seafood processing",
-          "Meat storage",
-          "Processing facilities",
-          "Export facilities"
-        ]
-      }
+  },
+  {
+    title: 'Control Panel for Cold Room',
+    image: '/controlpannel.webp',
+    description: 'Advanced control panels for cold room automation and safety.',
+    features: [
+      'Digital temperature controller',
+      'Alarm systems',
+      'User-friendly interface',
+      'Customizable settings',
+    ],
+    details: {
+      brief: 'Cold room control panels provide automated control, monitoring, and safety for refrigeration systems through digital interfaces and alarms.',
+      benefits: [
+        'Easy monitoring and temperature control',
+        'Safety alarms for critical events',
+        'Intuitive and user-friendly operation',
+        'Fully customizable settings',
+      ],
+      specs: [
+        'Controller: Digital with display',
+        'Alarms: High/Low Temp, Power Failure, Door Open',
+        'Inputs: Temperature sensors, door switch',
+        'Output: Compressor, light, heater control',
+      ],
+      applications: [
+        'All types of cold storage systems',
+        'Commercial refrigeration plants',
+        'Food & pharma cold chains',
+        'HVAC and industrial cooling',
+      ],
     },
-    {
-      icon: <Wine className="w-12 h-12" />,
-      title: "Beverages & Wines",
-      description: "Climate-controlled storage solutions for beverages and wine cellars.",
-      image: "https://images.pexels.com/photos/1005638/pexels-photo-1005638.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Wine cellars", "Beverage storage", "Temperature control", "Humidity management"],
-      detailedInfo: {
-        overview: "Our beverage and wine storage solutions provide precise climate control to maintain the perfect conditions for aging and storing wines and other beverages. We ensure optimal preservation of taste and quality.",
-        benefits: [
-          "Perfect aging conditions",
-          "Consistent quality",
-          "Energy efficiency",
-          "Easy monitoring"
-        ],
-        specifications: [
-          "Temperature range: 10°C to 18°C",
-          "Humidity control: 50-70%",
-          "UV protection",
-          "Vibration control"
-        ],
-        applications: [
-          "Wine cellars",
-          "Beverage storage",
-          "Distribution centers",
-          "Retail storage"
-        ]
-      }
-    }
-  ];
+  },
+  {
+    title: 'Evaporator Unit',
+    image: '/evaporator.webp',
+    description: 'High performance evaporator units for cold storage and refrigeration.',
+    features: [
+      'Efficient heat exchange',
+      'Anti-corrosive coating',
+      'Low maintenance',
+      'Multiple capacities',
+    ],
+    details: {
+      brief: 'Evaporator units are installed inside cold rooms to remove heat from the storage area, ensuring the desired temperature is maintained efficiently.',
+      benefits: [
+        'Optimal heat exchange and fast cooling',
+        'Anti-corrosive materials for durability',
+        'Easy to clean and maintain',
+        'Wide range of capacities for all cold room sizes',
+      ],
+      specs: [
+        'Fin Spacing: 4mm–8mm',
+        'Coil Material: Aluminum/Copper',
+        'Fan Diameter: 300mm–500mm',
+        'Temperature Application: Medium & Low Temp',
+      ],
+      applications: [
+        'Walk-in freezers and chillers',
+        'Meat and seafood storage',
+        'Vegetable and fruit preservation',
+        'Industrial refrigeration systems',
+      ],
+    },
+  },
+  {
+    title: 'Ripening Chamber',
+    image: '/reipeningchamber.webp',
+    description: 'Specialized chambers for controlled ripening of fruits like bananas and mangoes, ensuring uniform color and quality.',
+    features: [
+      'Precise temperature & humidity control',
+      'Ethylene gas injection system',
+      'Energy efficient operation',
+      'Uniform ripening',
+      'Customizable sizes',
+    ],
+    details: {
+      brief: 'Fruit ripening chambers are controlled atmospheric systems designed to artificially ripen fruits like bananas, mangoes, and papayas in a safe and uniform manner using regulated temperature, humidity, and ethylene gas.',
+      benefits: [
+        'Uniform and natural-looking ripening',
+        'Reduced spoilage and increased shelf life',
+        'Automated temperature and humidity control',
+        'Safe use of ethylene gas (non-toxic and residue-free)',
+        'Energy-efficient operation with minimal manual intervention',
+      ],
+      specs: [
+        'Temperature Range: 15°C to 30°C',
+        'Humidity Control: 85% to 95% RH',
+        'Gas Control: Ethylene dosing system (100-150 ppm)',
+        'Insulation: PUF Panels with 60mm–100mm thickness',
+        'Chamber Capacity: Customizable from 1MT to 30MT and above',
+      ],
+      applications: [
+        'Banana ripening',
+        'Mango ripening',
+        'Papaya and other climacteric fruits',
+        'Agricultural produce storage facilities',
+        'Fruit exporters and processing units',
+      ],
+    },
+  },
+];
+
+const Solutions = () => {
+  const [selected, setSelected] = useState<EquipmentItem | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.getAttribute('data-index') || '0');
-            setTimeout(() => {
-              setVisibleCards(prev => [...prev, index]);
-            }, index * 200);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const cards = sectionRef.current?.querySelectorAll('.solution-card');
-    cards?.forEach(card => observer.observe(card));
-
-    return () => observer.disconnect();
-  }, []);
-
-  const Modal = ({ industry, onClose }: { industry: Industry; onClose: () => void }) => {
-    useEffect(() => {
-      const handleEscape = (event: KeyboardEvent) => {
-        if (event.key === 'Escape') {
-          onClose();
-        }
-      };
-
-      document.addEventListener('keydown', handleEscape);
-      return () => {
-        document.removeEventListener('keydown', handleEscape);
-      };
-    }, [onClose]);
-
-    return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-          <div className="relative">
-            <div className="h-64 relative">
-              <img 
-                src={industry.image} 
-                alt={industry.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                {industry.icon}
-              </div>
-              <button 
-                onClick={onClose}
-                className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            
-            <div className="p-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">{industry.title}</h3>
-              
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Overview</h4>
-                  <p className="text-gray-600">{industry.detailedInfo.overview}</p>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Key Benefits</h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    {industry.detailedInfo.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center text-gray-600">
-                        <div className="w-1.5 h-1.5 bg-teal-600 rounded-full mr-3"></div>
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Technical Specifications</h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    {industry.detailedInfo.specifications.map((spec, idx) => (
-                      <li key={idx} className="flex items-center text-gray-600">
-                        <div className="w-1.5 h-1.5 bg-teal-600 rounded-full mr-3"></div>
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Applications</h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    {industry.detailedInfo.applications.map((app, idx) => (
-                      <li key={idx} className="flex items-center text-gray-600">
-                        <div className="w-1.5 h-1.5 bg-teal-600 rounded-full mr-3"></div>
-                        {app}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+    if (!selected) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelected(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selected]);
 
   return (
-    <section id="solutions" className="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden" ref={sectionRef}>
+    <section id="solutions" className="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">Industry Solutions</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">Our Equipment & Products</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-            Specialized cold storage solutions for diverse Indian industries. Each solution is designed 
-            to meet specific requirements and regulatory standards across different sectors.
+            We provide a wide range of cold storage equipment and solutions to meet your business needs. Explore our product offerings below.
           </p>
         </div>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {industries.map((industry, index) => (
-            <div 
-              key={index}
-              data-index={index}
-              className={`solution-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-700 group transform hover:scale-105 hover:-rotate-1 ${
-                visibleCards.includes(index) 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-10'
-              }`}
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={industry.image} 
-                  alt={industry.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70 transition-all duration-300"></div>
-                <div className="absolute bottom-4 left-4 text-white transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                  {industry.icon}
-                </div>
-                
-                <div className="absolute top-4 right-4 bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-semibold transform group-hover:scale-110 transition-transform duration-300">
-                  India Focused
-                </div>
+          {equipment.map((item, index) => (
+            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-700 group transform hover:scale-105 hover:-rotate-1 cursor-pointer" onClick={() => setSelected(item)}>
+              <div className="relative h-40 flex items-center justify-center bg-gradient-to-t from-blue-50 to-white">
+                <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover object-center opacity-80" />
               </div>
-              
-              <div className="p-8 relative">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors duration-300">
-                  {industry.title}
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
+                  {item.title}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{industry.description}</p>
-                
-                <div className="space-y-2 mb-6">
-                  {industry.features.map((feature, idx) => (
-                    <div 
-                      key={idx} 
-                      className="flex items-center text-sm text-gray-500 group-hover:text-gray-600 transition-all duration-300 transform hover:translate-x-2"
-                    >
-                      <div className="w-1.5 h-1.5 bg-teal-600 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                <p className="text-gray-600 mb-6 leading-relaxed">{item.description}</p>
+                <ul className="space-y-2 mb-2">
+                  {item.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-gray-500 group-hover:text-gray-600 transition-all duration-300 transform hover:translate-x-2">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
                       {feature}
-                    </div>
+                    </li>
                   ))}
+                </ul>
+                <div className="mt-6 flex justify-center">
+                  <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm animate-bounce shadow-sm cursor-pointer select-none">
+                    Click to know more
+                  </span>
                 </div>
-                
-                <button 
-                  onClick={() => setSelectedIndustry(industry)}
-                  className="text-teal-600 font-semibold hover:text-teal-700 transition-all duration-300 group flex items-center space-x-2"
-                >
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">Learn More</span>
-                  <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
-                </button>
-
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-teal-500/10 to-blue-500/10 rounded-bl-full transform group-hover:scale-150 transition-transform duration-500"></div>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {selectedIndustry && (
-        <Modal 
-          industry={selectedIndustry} 
-          onClose={() => setSelectedIndustry(null)} 
-        />
+      {selected && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelected(null)}>
+          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative" onClick={e => e.stopPropagation()}>
+            <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold" onClick={() => setSelected(null)}>&times;</button>
+            <div className="p-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">{selected.title}</h2>
+              <img src={selected.image} alt={selected.title} className="w-full h-48 object-cover object-center rounded-lg mb-4" />
+              <p className="text-gray-700 mb-4">{selected.details.brief}</p>
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Key Benefits</h3>
+                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                  {selected.details.benefits.map((b, i) => <li key={i}>{b}</li>)}
+                </ul>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Technical Specifications</h3>
+                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                  {selected.details.specs.map((s, i) => <li key={i}>{s}</li>)}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Applications</h3>
+                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                  {selected.details.applications.map((a, i) => <li key={i}>{a}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </section>
   );

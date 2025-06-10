@@ -75,13 +75,13 @@ const About = () => {
                   }`}
                   style={{ transitionDelay: `${index * 100 + 200}ms` }}
                 >
-                  <CheckCircle className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0 animate-pulse" />
+                  <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0 animate-pulse" />
                   <span className="text-gray-700 hover:text-gray-900 transition-colors duration-300">{brand}</span>
                 </div>
               ))}
             </div>
 
-            <button className="group bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 transition-all duration-300 font-semibold transform hover:scale-105 hover:shadow-lg">
+            <button className="group bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold transform hover:scale-105 hover:shadow-lg">
               <a 
                 href="#contact" 
                 className="group-hover:translate-x-1 transition-transform duration-300 inline-block"
@@ -98,7 +98,7 @@ const About = () => {
                 alt="Premium Refrigeration Equipment" 
                 className="rounded-xl shadow-lg w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent rounded-xl group-hover:from-teal-900/30 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-xl group-hover:from-blue-900/30 transition-all duration-300"></div>
             </div>
             
             {/* Equipment showcase */}
@@ -107,15 +107,15 @@ const About = () => {
               {technologies.map((tech, index) => (
                 <div 
                   key={index}
-                  className={`bg-gradient-to-br from-gray-50 to-teal-50 rounded-xl p-4 hover:from-teal-50 hover:to-teal-100 transition-all duration-300 group cursor-pointer transform hover:scale-105 ${
+                  className={`bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-4 hover:from-blue-50 hover:to-blue-100 transition-all duration-300 group cursor-pointer transform hover:scale-105 ${
                     isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
                   }`}
                   style={{ transitionDelay: `${index * 100 + 500}ms` }}
                 >
                   <div className="flex items-start space-x-3">
-                    <Zap className="w-5 h-5 text-teal-600 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                    <Zap className="w-5 h-5 text-blue-600 mt-1 group-hover:scale-110 transition-transform duration-300" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 group-hover:text-teal-700 transition-colors duration-300">
+                      <h4 className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
                         {tech.brand} {tech.product}
                       </h4>
                       <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">

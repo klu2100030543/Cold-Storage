@@ -23,7 +23,7 @@ const Header = () => {
           <div className="flex items-center animate-fade-in">
             <a href="#home">
               <img 
-                src="/image.png" 
+                src="/imagee.jpg" 
                 alt="Cold Frost Logo" 
                 className="h-12 w-auto hover:scale-105 transition-transform duration-300" 
               />
@@ -31,22 +31,22 @@ const Header = () => {
           </div>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {['Home', 'Services', 'About', 'Solutions', 'Contact'].map((item, index) => (
+            {['Home', 'Services', 'About', 'Equipment', 'Contact'].map((item, index) => (
               <a 
                 key={item}
                 href={`#${item.toLowerCase()}`} 
-                className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 relative group animate-fade-in-up"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative group animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
           <div className="hidden md:flex items-center space-x-4 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
             <a 
               href="#contact" 
-              className="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg"
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg"
             >
               Get Quote
             </a>
@@ -55,7 +55,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-teal-600 transition-colors duration-300"
+              className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -69,7 +69,7 @@ const Header = () => {
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`} 
-                  className="text-gray-700 hover:text-teal-600 font-medium transition-colors duration-300 animate-fade-in-up"
+                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 animate-fade-in-up"
                   style={{ animationDelay: `${index * 50}ms` }}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -78,7 +78,7 @@ const Header = () => {
               ))}
               <a 
                 href="#contact" 
-                className="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-all duration-300 font-medium w-fit transform hover:scale-105"
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300 font-medium w-fit transform hover:scale-105"
               >
                 Get Quote
               </a>
