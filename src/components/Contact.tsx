@@ -89,7 +89,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                 />
               </div>
 
@@ -104,7 +104,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                 />
               </div>
 
@@ -118,7 +118,7 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                 />
               </div>
 
@@ -133,14 +133,14 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={status.loading}
-                className={`w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                className={`w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 ${
                   status.loading ? 'opacity-75 cursor-not-allowed' : ''
                 }`}
               >
@@ -148,7 +148,7 @@ const Contact = () => {
                   'Sending...'
                 ) : (
                   <>
-                    <Send className="w-5 h-5 mr-2" />
+                    <Send className="w-5 h-5 mr-2 text-teal-100" />
                     Send Message
                   </>
                 )}
@@ -162,7 +162,7 @@ const Contact = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <Mail className="w-6 h-6 text-blue-600 mt-1" />
+                  <Mail className="w-6 h-6 text-teal-600 mt-1" />
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-900">Email</h4>
                     <p className="text-gray-600">info@coldstorage.com</p>
@@ -170,7 +170,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <Phone className="w-6 h-6 text-blue-600 mt-1" />
+                  <Phone className="w-6 h-6 text-teal-600 mt-1" />
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-900">Phone</h4>
                     <p className="text-gray-600">+91 123 456 7890</p>
@@ -178,7 +178,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <MapPin className="w-6 h-6 text-blue-600 mt-1" />
+                  <MapPin className="w-6 h-6 text-teal-600 mt-1" />
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-900">Address</h4>
                     <p className="text-gray-600">

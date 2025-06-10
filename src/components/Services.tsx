@@ -125,43 +125,43 @@ const Services = () => {
                 <img src={food.image} alt={food.title} className="absolute inset-0 w-full h-full object-cover object-center rounded-lg" />
                 
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors duration-300">
                 {food.title}
               </h3>
-              <div className="text-blue-700 font-medium mb-1">{food.temp}</div>
+              <div className="text-teal-700 font-medium mb-1">{food.temp}</div>
               <div className="text-xs text-gray-500 mb-2">{food.coolingType}</div>
               <p className="text-gray-600 mb-4 leading-relaxed">{food.description}</p>
               <ul className="space-y-2">
                 {food.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
+                    <div className="w-1.5 h-1.5 bg-teal-600 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-teal-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           ))}
         </div>
 
         {/* Additional info section */}
-        <div className="mt-16 bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-8 border border-blue-100 animate-fade-in-up" style={{ animationDelay: '800ms' }}>
+        <div className="mt-16 bg-gradient-to-br from-teal-50 to-teal-50 rounded-2xl p-8 border border-teal-100 animate-fade-in-up" style={{ animationDelay: '800ms' }}>
           <div className="text-center">
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Temperature Ranges for Different Foods</h3>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
               <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h4 className="font-semibold text-blue-700 mb-2">Chilled Storage</h4>
+                <h4 className="font-semibold text-teal-700 mb-2">Chilled Storage</h4>
                 <p className="text-gray-600 text-sm mb-2">0°C to 4°C</p>
                 <p className="text-gray-500 text-xs">Dairy, vegetables, fruits</p>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h4 className="font-semibold text-blue-700 mb-2">Frozen Storage</h4>
+                <h4 className="font-semibold text-teal-700 mb-2">Frozen Storage</h4>
                 <p className="text-gray-600 text-sm mb-2">-18°C to -25°C</p>
                 <p className="text-gray-500 text-xs">Meat, seafood, ice cream</p>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h4 className="font-semibold text-blue-700 mb-2">Deep Freeze</h4>
+                <h4 className="font-semibold text-teal-700 mb-2">Deep Freeze</h4>
                 <p className="text-gray-600 text-sm mb-2">-25°C to -40°C</p>
                 <p className="text-gray-500 text-xs">Long-term storage, exports</p>
               </div>
@@ -183,7 +183,7 @@ const Services = () => {
                   {foodTypes[selected].features.map((f, i) => <li key={i}>{f}</li>)}
                 </ul>
               </div>
-              <div className="text-blue-700 font-medium mb-1">{foodTypes[selected].temp}</div>
+              <div className="text-teal-700 font-medium mb-1">{foodTypes[selected].temp}</div>
               <div className="text-xs text-gray-500 mb-2">{foodTypes[selected].coolingType}</div>
             </div>
           </div>
