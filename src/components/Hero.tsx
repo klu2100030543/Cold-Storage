@@ -72,14 +72,7 @@ const Hero = () => {
                 className="rounded-xl shadow-2xl w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
               />
               {/* Floating stats */}
-              <div className="absolute -top-4 -right-4 bg-white text-gray-900 p-4 rounded-xl shadow-lg animate-bounce-slow">
-                <div className="text-2xl font-bold text-teal-600"></div>
-                <div className="text-sm">Projects Delivered</div>
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-teal-600 text-white p-4 rounded-xl shadow-lg animate-bounce-slow" style={{ animationDelay: '1s' }}>
-                <div className="text-2xl font-bold"></div>
-                <div className="text-sm">States Covered</div>
-              </div>
+              
             </div>
           </div>
         </div>

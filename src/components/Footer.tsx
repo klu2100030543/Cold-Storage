@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="lg:col-span-2 animate-fade-in-up">
             <div className="flex items-center mb-6">
               <img 
-                src="/image.png" 
+                src="/imagee.jpg" 
                 alt="Cold Frost Logo" 
                 className="h-10 w-auto hover:scale-105 transition-transform duration-300" 
               />
@@ -61,7 +61,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#solutions" className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `450ms` }}>
-                  Solutions
+                  Equipment
                 </a>
               </li>
               <li>
