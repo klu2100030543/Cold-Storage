@@ -23,7 +23,7 @@ const Hero = () => {
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
               <span className="animate-fade-in-up"> COLD FROST</span>
               <span className="block text-blue-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                THE COLD ROOM CONCEPTS
+                THE COLD ROOM SOLUTIONS
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: '400ms' }}>
