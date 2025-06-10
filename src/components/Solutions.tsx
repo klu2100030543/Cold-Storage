@@ -306,7 +306,7 @@ const Solutions = () => {
             <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold" onClick={() => setSelected(null)}>&times;</button>
             <div className="p-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-2">{selected.title}</h2>
-              <img src={selected.image} alt={selected.title} className="w-full h-48 object-cover object-center rounded-lg mb-4" />
+              <img src={selected.image} alt={selected.title} className="w-full h-90 object-cover object-center rounded-lg mb-4" />
               <p className="text-gray-700 mb-4">{selected.details.brief}</p>
               <div className="mb-4">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Key Benefits</h3>
