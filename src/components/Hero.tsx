@@ -67,7 +67,7 @@ const Hero = () => {
           <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
             <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 group">
               <img 
-                src="https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                src="/coldfrost.jpg" 
                 alt="Cold Storage Facility in India" 
                 className="rounded-xl shadow-2xl w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
               />
