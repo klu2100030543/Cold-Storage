@@ -21,9 +21,9 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="animate-fade-in-up"> CLOD FROST Premium Cold Storage</span>
+              <span className="animate-fade-in-up"> COLD FROST</span>
               <span className="block text-blue-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                Solutions in India
+                THE COLD ROOM CONCEPTS
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: '400ms' }}>
