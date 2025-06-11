@@ -23,7 +23,7 @@ const Header = () => {
           <div className="flex items-center animate-fade-in">
             <a href="#home">
               <img 
-                src="/image.png" 
+                src="/imagee.jpg" 
                 alt="Cold Frost Logo" 
                 className="h-12 w-auto hover:scale-105 transition-transform duration-300" 
               />
@@ -31,10 +31,10 @@ const Header = () => {
           </div>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {['Home', 'Services', 'About', 'Solutions', 'Contact'].map((item, index) => (
+            {['Home', 'Services', 'About', 'Equipment', 'Contact'].map((item, index) => (
               <a 
                 key={item}
-                href={`#${item.toLowerCase()}`} 
+                href={item === 'Equipment' ? '#solutions' : `#${item.toLowerCase()}`} 
                 className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 relative group animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -65,10 +65,10 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t animate-slide-down">
             <nav className="flex flex-col space-y-4">
-              {['Home', 'Services', 'About', 'Solutions', 'Contact'].map((item, index) => (
+              {['Home', 'Services', 'About', 'Equipment', 'Contact'].map((item, index) => (
                 <a 
                   key={item}
-                  href={`#${item.toLowerCase()}`} 
+                  href={item === 'Equipment' ? '#solutions' : `#${item.toLowerCase()}`} 
                   className="text-gray-700 hover:text-teal-600 font-medium transition-colors duration-300 animate-fade-in-up"
                   style={{ animationDelay: `${index * 50}ms` }}
                   onClick={() => setIsMenuOpen(false)}

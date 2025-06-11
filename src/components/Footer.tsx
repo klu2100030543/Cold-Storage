@@ -7,7 +7,7 @@ const Footer = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl animate-float"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-blue-500/5 rounded-full blur-2xl animate-float-delayed"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-teal-500/5 rounded-full blur-2xl animate-float-delayed"></div>
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="lg:col-span-2 animate-fade-in-up">
             <div className="flex items-center mb-6">
               <img 
-                src="/image.png" 
+                src="/imagee.jpg" 
                 alt="Cold Frost Logo" 
                 className="h-10 w-auto hover:scale-105 transition-transform duration-300" 
               />
@@ -61,7 +61,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#solutions" className="text-gray-300 hover:text-teal-400 transition-all duration-300 hover:translate-x-1 inline-block animate-fade-in-up" style={{ animationDelay: `450ms` }}>
-                  Solutions
+                  Equipment
                 </a>
               </li>
               <li>
@@ -105,7 +105,7 @@ const Footer = () => {
               © 2024 Cold Frost India. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((link, index) => (
+              {['Privacy Policy', 'Terms of Service' ].map((link, index) => (
                 <a 
                   key={link}
                   href="#" 

@@ -10,8 +10,7 @@ const About = () => {
     "Danfoss - Advanced compressors and controls",
     "Bitzer - High-efficiency screw compressors", 
     "Emerson - Smart temperature monitoring systems",
-    "Johnson Controls - Automated control solutions",
-    "Honeywell - Energy management and monitoring"
+    "Hubhvacr- Bock Compressor"
   ];
 
   const technologies = [
@@ -94,7 +93,7 @@ const About = () => {
           <div className={`space-y-8 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
             <div className="relative group">
               <img 
-                src="https://images.pexels.com/photos/4481942/pexels-photo-4481942.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                src="/heroo.jpeg" 
                 alt="Premium Refrigeration Equipment" 
                 className="rounded-xl shadow-lg w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />

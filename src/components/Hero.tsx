@@ -13,7 +13,7 @@ const Hero = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float-delayed"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-float-delayed"></div>
       </div>
       
       <div className="absolute inset-0 bg-black/20"></div>
@@ -21,9 +21,9 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="animate-fade-in-up"> CLOD FROST Premium Cold Storage</span>
+              <span className="animate-fade-in-up"> COLD FROST</span>
               <span className="block text-teal-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                Solutions in India
+                THE COLD ROOM SOLUTIONS
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: '400ms' }}>
@@ -65,21 +65,14 @@ const Hero = () => {
           </div>
           
           <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-            <div className="bg-gradient-to-br from-teal-500/20 to-blue-600/20 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 group">
+            <div className="bg-gradient-to-br from-teal-500/20 to-teal-600/20 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 group">
               <img 
-                src="https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                src="/coldfrost.jpg" 
                 alt="Cold Storage Facility in India" 
                 className="rounded-xl shadow-2xl w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
               />
               {/* Floating stats */}
-              <div className="absolute -top-4 -right-4 bg-white text-gray-900 p-4 rounded-xl shadow-lg animate-bounce-slow">
-                <div className="text-2xl font-bold text-teal-600"></div>
-                <div className="text-sm">Projects Delivered</div>
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-teal-600 text-white p-4 rounded-xl shadow-lg animate-bounce-slow" style={{ animationDelay: '1s' }}>
-                <div className="text-2xl font-bold"></div>
-                <div className="text-sm">States Covered</div>
-              </div>
+              
             </div>
           </div>
         </div>
