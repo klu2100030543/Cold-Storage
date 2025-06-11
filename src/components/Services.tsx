@@ -189,6 +189,43 @@ const Services = () => {
           </div>
         </div>
       )}
+      {/* New section for Cold Frost services */}
+      <div className="mt-16 bg-gradient-to-br from-teal-50 to-teal-50 rounded-2xl p-8 border border-teal-100 animate-fade-in-up" style={{ animationDelay: '1000ms' }}>
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Services</h3>
+          <p className="text-gray-600 mb-4">Cold Frost customizes products according to client requirements and provides the following services:</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <h4 className="font-semibold text-teal-700 mb-2">Estimation</h4>
+              <p className="text-gray-600 text-sm">Accurate cost and time estimates for your projects.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <h4 className="font-semibold text-teal-700 mb-2">Designing</h4>
+              <p className="text-gray-600 text-sm">Custom designs tailored to your specific needs.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <h4 className="font-semibold text-teal-700 mb-2">Supply</h4>
+              <p className="text-gray-600 text-sm">High-quality products delivered on time.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <h4 className="font-semibold text-teal-700 mb-2">Installation</h4>
+              <p className="text-gray-600 text-sm">Professional installation services for seamless setup.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <h4 className="font-semibold text-teal-700 mb-2">Commissioning</h4>
+              <p className="text-gray-600 text-sm">Thorough testing and commissioning to ensure optimal performance.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <h4 className="font-semibold text-teal-700 mb-2">After Sales Services</h4>
+              <p className="text-gray-600 text-sm">Ongoing support and maintenance (terms & conditions apply).</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <h4 className="font-semibold text-teal-700 mb-2">Best Product Performance</h4>
+              <p className="text-gray-600 text-sm">Delivered by our most skilled team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

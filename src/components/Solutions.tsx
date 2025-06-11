@@ -246,6 +246,70 @@ const equipment: EquipmentItem[] = [
       ],
     },
   },
+  {
+    title: 'Bitzer Compressor Rack System',
+    image: '/bitzer.png',
+    description: 'High-performance compressor rack systems designed for industrial refrigeration applications.',
+    features: [
+      'Energy-efficient operation',
+      'Modular design for easy maintenance',
+      'Advanced control systems',
+      'Suitable for large-scale refrigeration',
+    ],
+    details: {
+      brief: 'Bitzer Compressor Rack Systems are engineered for industrial refrigeration, offering high efficiency, reliability, and scalability for large-scale cooling applications.',
+      benefits: [
+        'Energy-efficient operation with low power consumption',
+        'Modular design for easy maintenance and scalability',
+        'Advanced control systems for precise temperature management',
+        'Durable and reliable for industrial use',
+      ],
+      specs: [
+        'Compressor Type: Screw and Scroll',
+        'Cooling Capacity: Customizable as per requirement',
+        'Control System: Advanced digital control',
+        'Installation: Modular rack system',
+      ],
+      applications: [
+        'Industrial refrigeration plants',
+        'Food processing and storage',
+        'Cold storage warehouses',
+        'HVAC systems',
+      ],
+    },
+  },
+  {
+    title: 'Bock Compressor',
+    image: '/bock.jpg',
+    description: 'Reliable and efficient compressors for various refrigeration and air conditioning applications.',
+    features: [
+      'High efficiency and reliability',
+      'Low noise operation',
+      'Wide range of capacities',
+      'Easy installation and maintenance',
+    ],
+    details: {
+      brief: 'Bock Compressors are known for their high efficiency, reliability, and low noise operation, making them ideal for various refrigeration and air conditioning applications.',
+      benefits: [
+        'High efficiency with low energy consumption',
+        'Low noise and vibration levels',
+        'Wide range of capacities for different applications',
+        'Easy installation and maintenance',
+      ],
+      specs: [
+        'Compressor Type: Reciprocating and Scroll',
+        'Cooling Capacity: Customizable as per requirement',
+        'Noise Level: Low',
+        'Installation: Easy and flexible',
+      ],
+      applications: [
+        'Refrigeration systems',
+        'Air conditioning units',
+        'Heat pumps',
+        'Industrial cooling applications',
+      ],
+    },
+  },
 ];
 
 const Solutions = () => {
