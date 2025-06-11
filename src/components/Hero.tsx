@@ -27,7 +27,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: '400ms' }}>
-              Welcome to Cold Frost, your premier destination for all your cold room needs. Our team of experts.
+              Welcome to Cold Frost, your premier destination for all your cold room needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
               <a 
