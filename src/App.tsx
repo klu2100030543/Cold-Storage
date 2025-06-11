@@ -17,7 +17,6 @@ function App() {
       <Solutions />
       <Contact />
       <Footer />
-      <SpeedInsights />
     </div>
   );
 }
